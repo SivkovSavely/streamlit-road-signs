@@ -51,14 +51,14 @@ if uploaded_file is not None:
     # model = create_model(num_classes)
     # model.fit(...) # Здесь нужно добавить обучение модели на вашем датасете
 
-    model = load_model('/Users/sivkov/Downloads/traffic_sign_classifier (2).h5')
+    model = load_model('./model.h5')
 
     # Предсказание
     prediction = model.predict(image)
     class_idx = np.argmax(prediction)
 
     # Загрузка словаря классов из JSON-файла
-    with open("/Users/sivkov/Downloads/class_indices.json") as f:
+    with open("./class_indices.json") as f:
         class_indices = json.load(f)
 
     # Создание обратного словаря: ключи и значения меняются местами
